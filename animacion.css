@@ -1,0 +1,75 @@
+/* Los agentes dibujan en el lienzo de la vista del editor: cada cursor va a una
+   esquina, arrastra hasta la opuesta trazando el rectángulo y aparece el componente.
+   Posiciones en px del lienzo del diseño (672 × 616). */
+
+/* Ventana sólida: que no se confunda con el fondo de puntos del hero. */
+.vista-del-editor {
+  background-color: var(--tz-base);
+  box-shadow: inset 0 0 0 1px var(--tz-line-strong), 0 -24px 80px -20px rgb(91 227 181 / 0.10), 0 30px 80px -10px #000000cc;
+}
+.barra-de-titulo { background-color: var(--tz-page); }
+.lienzo { background-color: var(--tz-base); }
+
+.trazo-dibujo {
+  position: absolute;
+  border: 1.5px solid var(--c);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Cada agente: color, rectángulo que dibuja y desplazamientos de su cursor
+   desde donde descansa hasta la esquina inicial (--x1, --y1) y la final (--x2, --y2). */
+.dibujo-claude, .cursor-claude-code, .nombre-claude-code, .boton-reservar, .seleccion-claude-code {
+  --c: var(--tz-agent-claude);
+  --x1: -174px; --y1: -30px; --x2: 42px; --y2: 14px;
+  --delay: 0.4s;
+}
+.dibujo-codex, .cursor-codex, .nombre-codex, .esqueleto-2 {
+  --c: var(--tz-agent-codex);
+  --x1: -164px; --y1: 4px; --x2: 96px; --y2: 40px;
+  --delay: 2.6s;
+}
+.dibujo-gemini, .cursor-gemini, .nombre-gemini, .foto-2, .seleccion-gemini {
+  --c: var(--tz-agent-gemini);
+  --x1: -72px; --y1: -104px; --x2: 36px; --y2: 0px;
+  --delay: 4.8s;
+}
+
+.dibujo-claude { left: 80px; top: 480px; width: 216px; height: 44px; border-radius: 8px; }
+.dibujo-codex { left: 372px; top: 228px; width: 260px; height: 36px; }
+.dibujo-gemini { left: 516px; top: 384px; width: 108px; height: 104px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .cursor-claude-code, .nombre-claude-code, .cursor-codex, .nombre-codex,
+  .cursor-gemini, .nombre-gemini {
+    animation: agente-cursor 9s var(--delay) infinite both;
+  }
+  .trazo-dibujo { animation: agente-trazo 9s var(--delay) infinite both; }
+  .boton-reservar, .esqueleto-2, .foto-2, .seleccion-claude-code, .seleccion-gemini {
+    animation: agente-componente 9s var(--delay) infinite both;
+  }
+}
+
+@keyframes agente-cursor {
+  0%, 4% { transform: translate(0, 0); }
+  16% { transform: translate(var(--x1), var(--y1)); }
+  20% { transform: translate(var(--x1), var(--y1)); }
+  44%, 52% { transform: translate(var(--x2), var(--y2)); }
+  68%, 100% { transform: translate(0, 0); }
+}
+
+@keyframes agente-trazo {
+  0%, 18% { opacity: 0; clip-path: inset(0 100% 100% 0); }
+  20% { opacity: 1; clip-path: inset(0 100% 100% 0); }
+  44% { opacity: 1; clip-path: inset(0 0 0 0); }
+  50% { opacity: 1; clip-path: inset(0 0 0 0); }
+  56%, 100% { opacity: 0; clip-path: inset(0 0 0 0); }
+}
+
+@keyframes agente-componente {
+  0%, 45% { opacity: 0; transform: scale(0.98); }
+  52%, 92% { opacity: 1; transform: scale(1); }
+  98%, 100% { opacity: 0; transform: scale(1); }
+}

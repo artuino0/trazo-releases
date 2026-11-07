@@ -1,0 +1,75 @@
+/* Sección «Motion»: una captura real del espacio Motion con un reel hecho en Trazo y,
+   encima, el MP4 que exportó ese mismo reel (en bucle, sin sonido). */
+
+.flujo-motion {
+  align-self: stretch;
+  background-color: var(--tz-page);
+  border-top: 1px solid var(--tz-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  padding: 120px var(--pad);
+}
+
+.mo-encabezado { max-width: 760px; display: flex; flex-direction: column; gap: 16px; text-align: center; }
+.mo-antetitulo { margin: 0; font: 600 15px/20px 'Instrument Sans', system-ui, sans-serif; color: var(--tz-mint); }
+.mo-titulo { margin: 0; font: 700 44px/52px 'Instrument Sans', system-ui, sans-serif; letter-spacing: -1px; color: var(--tz-text); }
+.mo-bajada { margin: 0; font: 400 18px/28px 'Instrument Sans', system-ui, sans-serif; color: var(--tz-text-2); }
+
+/* ── El editor y el reel exportado ─────────────────────────── */
+.mo-demo { position: relative; width: 100%; max-width: 1200px; padding-right: 120px; box-sizing: border-box; }
+.mo-editor { margin: 0; }
+.mo-editor img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px var(--tz-line-strong), 0 40px 80px -30px rgb(0 0 0 / 0.9);
+}
+.mo-reel {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  width: 240px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.mo-reel video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 24px;
+  background: #15121F;
+  box-shadow: 0 0 0 2px var(--tz-mint), 0 30px 70px -20px rgb(91 227 181 / 0.3), 0 30px 60px -20px rgb(0 0 0 / 0.9);
+}
+.mo-reel figcaption { font: 500 13px/16px 'JetBrains Mono', monospace; color: var(--tz-mint); }
+
+/* ── Lo que hace ──────────────────────────────────────────── */
+.mo-puntos { list-style: none; margin: 24px 0 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mo-puntos li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 16px; background: var(--tz-s1); box-shadow: inset 0 0 0 1px var(--tz-line); }
+.mo-puntos b { font: 600 17px/24px 'Instrument Sans', system-ui, sans-serif; color: var(--tz-text); }
+.mo-puntos span { font: 400 15px/22px 'Instrument Sans', system-ui, sans-serif; color: var(--tz-text-2); }
+.mo-puntos small { font: 500 12px/16px 'JetBrains Mono', monospace; color: var(--tz-mint); }
+
+@media (max-width: 900px) {
+  .flujo-motion { padding: 80px 20px; gap: 40px; }
+  .mo-titulo { font-size: 32px; line-height: 40px; }
+  .mo-bajada { font-size: 16px; line-height: 24px; }
+  /* En el celular: primero el reel, debajo la captura del editor. */
+  .mo-demo { padding-right: 0; display: flex; flex-direction: column-reverse; align-items: center; gap: 24px; }
+  .mo-reel { position: static; width: min(220px, 60vw); }
+  .mo-editor img { border-radius: 10px; }
+  .mo-puntos { margin-top: 0; grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Sección «Sistemas de diseño»: la misma estructura que Motion, con fondo de base y cuatro puntos. */
+.flujo-sistemas { background-color: var(--tz-base); }
+.si-captura { width: 100%; max-width: 1200px; }
+.si-puntos { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 1200px; }
+@media (max-width: 1100px) { .si-puntos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .si-puntos { grid-template-columns: minmax(0, 1fr); } }

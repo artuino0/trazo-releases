@@ -1,0 +1,129 @@
+/* styles.css sale tal cual del export de Trazo (Trazo_landing.trazo, 1440 px de ancho).
+   Aquí va lo que lo vuelve una página: base, anclas y cómo se acomoda en pantallas
+   más anchas o más chicas, siguiendo el marco "Landing Trazo — Mobile". */
+
+:root {
+  --g: 120px;
+  /* El contenido mide 1200 px como en el diseño; a los lados crece el margen. */
+  --pad: max(var(--g), calc((100% - 1200px) / 2));
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: var(--tz-page);
+  color: var(--tz-text);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+section { scroll-margin-top: 0; }
+
+.landing-trazo-desktop { width: 100%; min-height: 100vh; overflow: clip; }
+
+.navegacion, .hero, .como-funciona, .varios-agentes, .del-lienzo-al-codigo,
+.prototipo-y-app-movil, .agentes-compatibles, .cta-final, .footer {
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+
+.navegacion {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--tz-page) 82%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.cta-final { cursor: auto; }
+
+/* Los patrones de puntos son absolutos y se pintarían encima del contenido. */
+.patron-de-puntos, .patron-de-puntos-2, .patron-de-puntos-3, .patron-de-puntos-4 { z-index: 0; pointer-events: none; }
+.hero > :not(.patron-de-puntos), .varios-agentes > :not(.patron-de-puntos-2),
+.prototipo-y-app-movil > :not(.patron-de-puntos-3), .cta-final > :not(.patron-de-puntos-4) {
+  position: relative;
+  z-index: 1;
+}
+/* La sección que sigue al hero tapa la ventana del editor y su sombra. */
+.como-funciona { position: relative; z-index: 2; }
+
+/* Interacción */
+.enlaces a, .footer a { transition: color .15s; }
+.enlaces a:hover, .footer a:hover { color: var(--tz-text); }
+.boton-descargar-nav, .boton-descargar, .boton-linux, .boton-como-funciona,
+.boton-macos, .boton-windows { transition: filter .15s, background-color .15s; }
+.boton-descargar-nav:hover, .boton-descargar:hover, .boton-linux:hover { filter: brightness(1.08); }
+.boton-como-funciona:hover, .boton-macos:hover, .boton-windows:hover { filter: brightness(1.25); }
+a:focus-visible { outline: 2px solid var(--tz-mint); outline-offset: 3px; border-radius: 8px; }
+
+/* Iniciales en lugar de logos de terceros */
+.texto-56, .texto-58, .texto-60, .texto-62 { font-size: 18px; line-height: 20px; font-weight: 600; }
+
+/* Maquetas de ancho fijo: se escalan completas (ver el script de index.html). */
+.vista-del-editor { width: 1200px; align-self: flex-start; }
+.hero-texto, .bajada, .titulo-18 { max-width: 100%; }
+.tarjetas { width: 100%; max-width: 1200px; }
+.codigo { overflow-x: auto; }
+
+@media (max-width: 1180px) {
+  :root { --g: 48px; }
+  .varios-agentes, .del-lienzo-al-codigo { flex-direction: column; align-items: stretch; gap: 48px; }
+  .del-lienzo-al-codigo .texto-47 { order: -1; }
+  .visual-zonas, .panel-codigo { width: auto; align-self: stretch; }
+  .visual-zonas { width: 620px; align-self: flex-start; }
+  .editor-completo { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .funciones { flex-wrap: wrap; }
+  .agentes-3 { display: grid; grid-template-columns: 1fr 1fr; }
+  .navegador { display: none; }
+}
+
+@media (max-width: 860px) {
+  :root { --g: 20px; }
+  .enlaces { display: none; }
+  .navegacion { height: 64px; }
+  .hero { padding-top: 56px; gap: 48px; }
+  .titular { font-size: 40px; line-height: 44px; letter-spacing: -1.2px; }
+  .bajada { font-size: 17px; line-height: 27px; }
+  .acciones-hero { flex-wrap: wrap; }
+  .meta-hero { white-space: normal; }
+
+  .como-funciona, .varios-agentes, .del-lienzo-al-codigo, .prototipo-y-app-movil,
+  .cta-final { padding-top: 80px; padding-bottom: 80px; }
+  .agentes-compatibles { padding-top: 72px; padding-bottom: 72px; }
+  .titulo-7, .titulo-12, .titulo-13, .titulo-14, .titulo-17 {
+    font-size: 32px; line-height: 38px; letter-spacing: -0.8px;
+  }
+  .como-funciona, .prototipo-y-app-movil { gap: 40px; }
+
+  .pasos, .tarjetas { flex-direction: column; }
+  .encabezado-seccion-3 { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .agentes-3 { grid-template-columns: 1fr; }
+  .agentes-3 > div { flex-direction: row; align-items: center; }
+
+  .grupo-archivos, .grupo-codigo, .grupo-kits { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .grupos p { white-space: normal; }
+
+  .visual-dispositivos { gap: 12px; padding: 24px 12px; }
+
+  .caja-cta { padding: 48px 20px 40px; }
+  .titulo-18 { font-size: 34px; line-height: 40px; letter-spacing: -1px; }
+  .acciones { flex-direction: column; align-self: stretch; }
+  .acciones > a { align-self: stretch; justify-content: center; }
+  .texto-64 { white-space: normal; text-align: center; }
+
+  .encabezado-seccion, .encabezado-seccion-2, .parrafo-5, .bajada-2 { width: auto; max-width: 100%; }
+  .bajada-2 { white-space: normal; text-align: center; }
+  .acciones { width: 100%; }
+  .recuadro-version-y-requisitos { height: auto; padding-top: 10px; padding-bottom: 10px; }
+  .kit { display: none; }
+  /* En el teléfono la vista del editor muestra solo el lienzo con los agentes. */
+  .vista-del-editor { width: 688px; height: 660px; }
+  .panel-agente, .panel-propiedades, .presentar, .deshacer, .rehacer { display: none; }
+  .visual-movil { gap: 12px; padding-left: 12px; padding-right: 12px; }
+
+  .footer { padding-top: 48px; }
+  .arriba { flex-wrap: wrap; gap: 40px; }
+  .marca { flex: 1 1 100%; }
+  .abajo { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
