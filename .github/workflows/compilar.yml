@@ -38,10 +38,13 @@ jobs:
           HIT="$(find)"
           if [ -n "$HIT" ] && [ "${HIT#* }" != true ]; then echo "$TAG ya está publicada"; exit 1; fi
           if [ -z "$HIT" ]; then
-            gh release create "$TAG" -R "$REPO" --draft --title "Trazo $TAG" --notes "Descarga el archivo de tu sistema. Si ya tienes Trazo, se actualiza solo." > /dev/null
-            HIT="$(find)"
+            # El id sale de la respuesta: la lista de releases tarda en mostrar un borrador recién creado.
+            ID="$(gh api -X POST "repos/$REPO/releases" -f tag_name="$TAG" -f name="Trazo $TAG" -f body="Descarga el archivo de tu sistema. Si ya tienes Trazo, se actualiza solo." -F draft=true --jq .id)"
+          else
+            ID="${HIT%% *}"
           fi
-          echo "id=${HIT%% *}" >> "$GITHUB_OUTPUT"
+          echo "$ID" | grep -Eq '^[0-9]+$' || { echo "No salió el id del borrador ($ID)"; exit 1; }
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
 
   # Las pruebas de siempre (tipos, JS, Rust con ffmpeg) en los tres sistemas, antes de compilar: si fallan, no se
   # compila. Antes corrían en el repo privado en cada push (macOS ×10, Windows ×2 en minutos cobrados).
