@@ -1,4 +1,4 @@
-# Compila una versión de Trazo en este repo público (los minutos de Actions no se cobran) a partir del código
+# Prueba y compila una versión de Trazo en este repo público (los minutos de Actions no se cobran) a partir del código
 # privado de artuino0/trazo, que se baja con una llave de solo lectura (secreto TRAZO_DEPLOY_KEY). Deja todo en
 # un borrador de release vX.Y.Z aquí mismo: Linux (AppImage, .deb, .rpm), Windows, macOS universal, latest.json
 # firmado y el editor para Orquest. scripts/publicar.sh (en artuino0/trazo) agrega el APK y lo publica.
@@ -43,8 +43,66 @@ jobs:
           fi
           echo "id=${HIT%% *}" >> "$GITHUB_OUTPUT"
 
+  # Las pruebas de siempre (tipos, JS, Rust con ffmpeg) en los tres sistemas, antes de compilar: si fallan, no se
+  # compila. Antes corrían en el repo privado en cada push (macOS ×10, Windows ×2 en minutos cobrados).
+  pruebas:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: artuino0/trazo
+          ref: ${{ inputs.version }}
+          ssh-key: ${{ secrets.TRAZO_DEPLOY_KEY }}
+          persist-credentials: false
+
+      - name: Dependencias de Linux
+        if: matrix.os == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf ffmpeg
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - run: npm ci
+
+      - name: ffmpeg
+        if: matrix.os != 'ubuntu-22.04'
+        run: |
+          if [ "$RUNNER_OS" = Windows ]; then choco install ffmpeg -y --no-progress; else brew install ffmpeg; fi
+          ffmpeg -version | head -1
+
+      - name: Tipos
+        run: npm run typecheck
+
+      - name: Pruebas de JS
+        run: npm test
+
+      # generate_context! necesita dist/ para compilar.
+      - name: Frontend
+        run: npx vite build
+
+      - name: Pruebas de Rust
+        working-directory: src-tauri
+        run: cargo test --locked
+
   build:
-    needs: release
+    needs: [release, pruebas]
     strategy:
       fail-fast: false
       matrix:
