@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trazo — diseña con tus agentes de IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="description" content="Trazo es un editor de diseño UX/UI de escritorio donde Claude Code, Codex, Gemini CLI y OpenCode diseñan contigo en el mismo lienzo.">
+<meta name="theme-color" content="#0A0C0F">
+<link rel="canonical" href="https://trazo.dydasoftware.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trazo">
+<meta property="og:url" content="https://trazo.dydasoftware.com/">
+<meta property="og:title" content="Trazo — diseña con tus agentes de IA">
+<meta property="og:description" content="Editor de diseño local. Claude Code, Codex, Gemini CLI y OpenCode diseñan contigo en el mismo lienzo, y tu prototipo ya navega.">
+<meta property="og:image" content="https://trazo.dydasoftware.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trazo: dos pantallas de una app conectadas en el prototipo">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trazo — diseña con tus agentes de IA">
+<meta name="twitter:description" content="Editor de diseño local. Tus agentes de IA diseñan contigo en el mismo lienzo, y tu prototipo ya navega.">
+<meta name="twitter:image" content="https://trazo.dydasoftware.com/assets/og.jpg">
+<link rel="stylesheet" href="styles.css?v=f6e83cb">
+<link rel="stylesheet" href="responsive.css?v=f6e83cb">
+<link rel="stylesheet" href="animacion.css?v=f6e83cb">
+<link rel="stylesheet" href="prototipo.css?v=f6e83cb">
+<link rel="stylesheet" href="motion.css?v=f6e83cb">
+</head>
+<body>
+<!-- Landing Trazo — Desktop -->
+<main class="landing-trazo-desktop">
+  <nav class="navegacion">
+    <div class="logo">
+      <svg class="logo-trazo" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 19c3-9 6-13 8-13s2 6 4 6 3-3 4-6" fill="none" stroke="var(--tz-mint)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+      <h2 class="logo-palabra">Trazo</h2>
+    </div>
+    <div class="enlaces">
+      <a class="enlace-como-funciona" href="#como-funciona">Cómo funciona</a>
+      <a class="enlace-agentes" href="#agentes">Varios agentes</a>
+      <a class="enlace-codigo" href="#codigo">Código</a>
+      <a class="enlace-prototipo" href="#prototipo">Prototipo</a>
+      <a class="enlace-prototipo" href="#motion">Motion</a>
+      <a class="enlace-prototipo" href="#sistemas">Sistemas</a>
+      <a class="enlace-movil" href="#movil">App móvil</a>
+    </div>
+    <a class="boton-descargar-nav" href="#descargar" data-descarga>
+      <svg class="icono-descargar" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3" fill="none" stroke="var(--tz-on-mint)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+      <span class="etiqueta">Descargar</span>
+    </a>
+  </nav>
+  <div class="hero">
+    <div class="patron-de-puntos"></div>
+    <div class="hero-texto">
+      <div class="etiqueta-hero">
+        <div class="punto"></div>
+        <p class="texto">Editor de diseño local · agentes por MCP</p>
+      </div>
+      <h1 class="titular">Diseña con tus agentes de IA en el mismo lienzo.</h1>
+      <h2 class="bajada">Trazo es un editor de diseño UX/UI de escritorio. Claude Code, Codex, Gemini CLI y OpenCode diseñan dentro de tu archivo, y tú ves cada cambio mientras ocurre.</h2>
+      <div class="acciones-hero">
+        <a class="boton-descargar" href="#descargar" data-descarga>
+          <svg class="icono-descargar-2" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3" fill="none" stroke="var(--tz-on-mint)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+          <span class="etiqueta-2">Descargar</span>
+        </a>
+        <a class="boton-como-funciona" href="#como-funciona">
+          <span class="etiqueta-3">Ver cómo funciona</span>
+          <svg class="icono-flecha" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12h14 M12 5l7 7-7 7" fill="none" stroke="var(--tz-text-2)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+        </a>
+      </div>
+      <p class="meta-hero">Gratis · Linux, macOS y Windows · tus archivos .trazo viven en tu equipo</p>
+    </div>
+    <div class="vista-del-editor">
+      <div class="barra-de-titulo">
+        <div class="logo-2">
+          <svg class="icono-trazo" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 19c3-9 6-13 8-13s2 6 4 6 3-3 4-6" fill="none" stroke="var(--tz-mint)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+          <p class="trazo">Trazo</p>
+        </div>
+        <div class="separador"></div>
+        <div class="archivo-y-pagina">
+          <p class="archivo">cafe-lunar</p>
+          <div class="sin-guardar"></div>
+          <p class="barra">/</p>
+          <p class="pagina">Reservas</p>
+        </div>
+        <div class="deshacer">
+          <svg class="icono-deshacer" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h11a5 5 0 0 1 0 10h-3" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+        </div>
+        <div class="rehacer">
+          <svg class="icono-rehacer" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M15 14l5-5-5-5M20 9H9a5 5 0 0 0 0 10h3" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+        </div>
+        <div class="espacio"></div>
+        <div class="presentar">
+          <svg class="icono-presentar" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="none" stroke="var(--tz-text)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-2">Presentar</p>
+        </div>
+        <div class="mcp">
+          <button type="button" class="conectado"></button>
+          <p class="mcp-2">MCP</p>
+          <p class="agentes">· 3 agentes</p>
+        </div>
+        <div class="guardar">
+          <svg class="icono-guardar" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 3h11l4 4v14H5zM8 3v6h8V3M8 21v-7h8v7" fill="none" stroke="var(--tz-on-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-3">Guardar</p>
+        </div>
+      </div>
+      <div class="cuerpo">
+        <div class="panel-agente">
+          <div class="pestanas">
+            <div class="agente-activa">
+              <svg class="icono-chat" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="var(--tz-text)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-4">Agente</p>
+            </div>
+            <div class="capas">
+              <svg class="icono-capas" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="componentes">
+              <svg class="icono-componentes" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 2l3.5 3.5L12 9 8.5 5.5zM5.5 9L9 12.5 5.5 16 2 12.5zM18.5 9l3.5 3.5-3.5 3.5-3.5-3.5zM12 16l3.5 3.5L12 23l-3.5-3.5z" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="variables">
+              <svg class="icono-variables" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="espacio-2"></div>
+            <div class="ocultar-panel">
+              <svg class="icono-panel" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 4h16v16H4zM9 4v16" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+          </div>
+          <div class="divisor"></div>
+          <div class="agente-elegido">
+            <button type="button" class="conectado-2"></button>
+            <p class="etiqueta-4">Agente</p>
+            <p class="agente">Claude Code · Opus</p>
+            <svg class="icono-abrir" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="var(--tz-text-2)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+          </div>
+          <div class="divisor-2"></div>
+          <div class="conversacion">
+            <div class="fila-usuario">
+              <div class="mensaje-del-usuario">
+                <p class="texto-5">Haz la pantalla de reservas, un panel de pedidos y las tarjetas del menú.</p>
+              </div>
+            </div>
+            <div class="estado-lider">
+              <div class="punto-2"></div>
+              <p class="texto-6">Claude Code · líder</p>
+            </div>
+            <div class="mensaje-del-agente">
+              <p class="texto-7">Reparto en 3 zonas: Reservas para mí, el panel para Codex y las tarjetas para Gemini CLI.</p>
+              <div class="herramientas">
+                <div class="split-work">
+                  <svg class="hecho" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12l5 5L20 7" fill="none" stroke="var(--tz-mint)" stroke-width="2.5" vector-effect="non-scaling-stroke" /></svg>
+                  <p class="texto-8">split_work</p>
+                </div>
+                <div class="apply-operations">
+                  <svg class="hecho-2" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12l5 5L20 7" fill="none" stroke="var(--tz-mint)" stroke-width="2.5" vector-effect="non-scaling-stroke" /></svg>
+                  <p class="texto-9">apply_operations</p>
+                </div>
+                <div class="render-image">
+                  <svg class="hecho-3" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12l5 5L20 7" fill="none" stroke="var(--tz-mint)" stroke-width="2.5" vector-effect="non-scaling-stroke" /></svg>
+                  <p class="texto-10">render_image</p>
+                </div>
+              </div>
+            </div>
+            <div class="estado-codex">
+              <div class="punto-3"></div>
+              <p class="texto-11">Codex · Panel de pedidos: render e inspección, 0 problemas</p>
+            </div>
+            <div class="estado-gemini">
+              <div class="punto-4"></div>
+              <p class="texto-12">Gemini CLI · armando las tarjetas del menú…</p>
+            </div>
+          </div>
+          <div class="divisor-3"></div>
+          <div class="compositor">
+            <div class="caja">
+              <div class="contexto">
+                <p class="texto-13">@ Reservas</p>
+              </div>
+              <p class="placeholder">Diseña lo que sea…</p>
+              <div class="barra-2">
+                <svg class="adjuntar" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+                <p class="esfuerzo">Medio</p>
+                <p class="agentes-2">3 agentes</p>
+                <div class="espacio-3"></div>
+                <div class="enviar">
+                  <svg class="icono-enviar" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12l16-8-6 16-2-7z" fill="none" stroke="var(--tz-on-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lienzo">
+          <p class="etiqueta-marco-a">Reservas  390 × 844</p>
+          <div class="diseno-reservas">
+            <h2 class="titulo">Reserva tu mesa</h2>
+            <p class="fecha">Jueves 14 de noviembre · 2 personas</p>
+            <div class="horario-1">
+              <p class="hora">13:30</p>
+              <p class="estado">Terraza</p>
+            </div>
+            <div class="horario-2">
+              <p class="hora-2">14:00</p>
+              <p class="estado-2">Salón</p>
+            </div>
+            <div class="horario-3">
+              <p class="hora-3">14:30</p>
+              <p class="estado-3">Barra</p>
+            </div>
+            <div class="relleno"></div>
+            <button type="button" class="boton-reservar">
+              <span class="etiqueta-5">Reservar 14:00</span>
+            </button>
+          </div>
+          <div class="seleccion-claude-code"></div>
+          <p class="etiqueta-marco-b">Panel de pedidos</p>
+          <div class="diseno-panel">
+            <p class="titulo-2">Pedidos de hoy</p>
+            <div class="fila-1">
+              <p class="cliente">Mesa 4 · Lucía R.</p>
+              <p class="estado-4">En cocina</p>
+            </div>
+            <div class="fila-2">
+              <p class="cliente-2">Mesa 7 · Andrés P.</p>
+              <p class="estado-5">Servido</p>
+            </div>
+            <div class="esqueleto-1"></div>
+            <div class="esqueleto-2"></div>
+          </div>
+          <div class="seleccion-codex"></div>
+          <svg class="cursor-codex" viewBox="0 0 14 20" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1L1 17L5.5 13L8.5 19.5L11 18.5L8 12L13.5 12Z" fill="var(--tz-agent-codex)" stroke="var(--tz-page)" stroke-width="1" vector-effect="non-scaling-stroke" /></svg>
+          <div class="nombre-codex">
+            <p class="texto-14">Codex</p>
+          </div>
+          <p class="etiqueta-marco-c">Tarjetas de menú</p>
+          <div class="diseno-tarjetas">
+            <div class="tarjeta-1">
+              <div class="foto"></div>
+              <p class="nombre">Flat white</p>
+            </div>
+            <div class="tarjeta-2">
+              <div class="foto-2"></div>
+              <div class="esqueleto"></div>
+            </div>
+          </div>
+          <div class="seleccion-gemini"></div>
+          <svg class="cursor-gemini" viewBox="0 0 14 20" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1L1 17L5.5 13L8.5 19.5L11 18.5L8 12L13.5 12Z" fill="var(--tz-agent-gemini)" stroke="var(--tz-page)" stroke-width="1" vector-effect="non-scaling-stroke" /></svg>
+          <svg class="cursor-claude-code" viewBox="0 0 14 20" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1L1 17L5.5 13L8.5 19.5L11 18.5L8 12L13.5 12Z" fill="var(--tz-agent-claude)" stroke="var(--tz-page)" stroke-width="1" vector-effect="non-scaling-stroke" /></svg>
+          <div class="nombre-claude-code">
+            <p class="texto-15">Claude Code · líder</p>
+          </div>
+          <div class="nombre-gemini">
+            <p class="texto-16">Gemini CLI</p>
+          </div>
+          <div class="trazo-dibujo dibujo-claude" aria-hidden="true"></div>
+          <div class="trazo-dibujo dibujo-codex" aria-hidden="true"></div>
+          <div class="trazo-dibujo dibujo-gemini" aria-hidden="true"></div>
+          <div class="herramientas-2">
+            <div class="mover-activa">
+              <svg class="icono" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 3l14 7-6 2-2 6z" fill="none" stroke="var(--tz-on-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="marco">
+              <svg class="icono-2" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M7 3v18M17 3v18M3 7h18M3 17h18" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="rectangulo">
+              <svg class="icono-3" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 5h16v14H4z" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="pluma">
+              <svg class="icono-4" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16zM14 6l3 3" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="texto-17">
+              <svg class="icono-5" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 6V4h14v2M12 4v16M9 20h6" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="nota">
+              <svg class="icono-6" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 4h14v11l-5 5H5zM14 20v-5h5M8 9h8M8 13h5" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="mano">
+              <svg class="icono-7" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M8 12V6a1.5 1.5 0 0 1 3 0v5m0-6a1.5 1.5 0 0 1 3 0v6m0-4a1.5 1.5 0 0 1 3 0v7a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-3l-2-4a1.5 1.5 0 0 1 2.5-1.5L8 14" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="separador-2"></div>
+            <div class="componentes-2">
+              <svg class="icono-8" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 2l3.5 3.5L12 9 8.5 5.5zM5.5 9L9 12.5 5.5 16 2 12.5zM18.5 9l3.5 3.5-3.5 3.5-3.5-3.5zM12 16l3.5 3.5L12 23l-3.5-3.5z" fill="none" stroke="var(--tz-violet)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+          </div>
+          <div class="zoom">
+            <div class="alejar">
+              <svg class="icono-9" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12h14" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="nivel">
+              <p class="texto-18">78%</p>
+            </div>
+            <div class="acercar">
+              <svg class="icono-10" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="ajustar">
+              <svg class="icono-11" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+          </div>
+        </div>
+        <footer class="panel-propiedades">
+          <div class="pestanas-2">
+            <div class="diseno-activa">
+              <div class="espacio-4"></div>
+              <p class="texto-19">Diseño</p>
+              <div class="espacio-5"></div>
+              <div class="subrayado"></div>
+            </div>
+            <div class="prototipo">
+              <p class="texto-20">Prototipo</p>
+            </div>
+            <div class="ocultar-panel-2">
+              <svg class="icono-panel-2" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 4h16v16H4zM15 4v16" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+          </div>
+          <div class="divisor-4"></div>
+          <div class="capa-elegida">
+            <div class="nombre-2">
+              <svg class="icono-marco" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M7 3v18M17 3v18M3 7h18M3 17h18" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-21">Reservas</p>
+            </div>
+            <p class="tipo">Marco · auto-layout</p>
+            <div class="crear-componente">
+              <svg class="icono-12" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 2l3.5 3.5L12 9 8.5 5.5zM5.5 9L9 12.5 5.5 16 2 12.5zM18.5 9l3.5 3.5-3.5 3.5-3.5-3.5zM12 16l3.5 3.5L12 23l-3.5-3.5z" fill="none" stroke="var(--tz-violet)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-22">Crear componente</p>
+            </div>
+          </div>
+          <div class="divisor-5"></div>
+          <div class="seccion-posicion">
+            <div class="titulo-3">
+              <svg class="flecha" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="var(--tz-text-2)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-23">Posición</p>
+            </div>
+            <div class="campos">
+              <div class="x">
+                <p class="etiqueta-6">X</p>
+                <p class="valor">0</p>
+              </div>
+              <div class="y">
+                <p class="etiqueta-7">Y</p>
+                <p class="valor-2">0</p>
+              </div>
+            </div>
+          </div>
+          <div class="divisor-6"></div>
+          <div class="seccion-dimensiones">
+            <div class="titulo-4">
+              <svg class="flecha-2" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="var(--tz-text-2)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-24">Dimensiones</p>
+            </div>
+            <div class="campos-2">
+              <div class="w">
+                <p class="etiqueta-8">W</p>
+                <p class="valor-3">390</p>
+              </div>
+              <div class="h">
+                <p class="etiqueta-9">H</p>
+                <p class="valor-4">844</p>
+              </div>
+            </div>
+          </div>
+          <div class="divisor-7"></div>
+          <div class="seccion-relleno">
+            <div class="titulo-5">
+              <svg class="flecha-3" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="var(--tz-text-2)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-25">Relleno</p>
+              <svg class="agregar" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+            </div>
+            <div class="color">
+              <div class="muestra"></div>
+              <p class="variable">color/fondo</p>
+              <p class="opacidad">100%</p>
+            </div>
+          </div>
+          <div class="divisor-8"></div>
+          <div class="seccion-contexto">
+            <div class="titulo-6">
+              <svg class="flecha-4" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="var(--tz-text-2)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-26">Contexto para el agente</p>
+            </div>
+            <div class="nota-2">
+              <p class="texto-27">Reservas de un café. Tono cálido, un solo botón principal.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <section class="como-funciona" id="como-funciona">
+    <header class="encabezado-seccion">
+      <p class="antetitulo">Cómo funciona</p>
+      <h1 class="titulo-7">Tres pasos y tu agente ya está diseñando.</h1>
+    </header>
+    <div class="pasos">
+      <div class="paso-1">
+        <div class="cabeza">
+          <div class="caja-icono">
+            <svg class="icono-archivo" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z M14 2v6h6" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          </div>
+          <p class="numero">01</p>
+        </div>
+        <h2 class="titulo-8">Abre un archivo .trazo</h2>
+        <p class="texto-28">Crea uno nuevo o abre uno que ya tengas. El archivo vive en tu equipo, no en un servidor.</p>
+      </div>
+      <div class="paso-2">
+        <div class="cabeza-2">
+          <div class="caja-icono-2">
+            <svg class="icono-terminal" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 17l6-6-6-6 M12 19h8" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          </div>
+          <p class="numero-2">02</p>
+        </div>
+        <h2 class="titulo-9">Conecta tu agente</h2>
+        <p class="texto-29">Claude Code, Codex, Gemini CLI u OpenCode entran a tu archivo por MCP, desde tu terminal.</p>
+      </div>
+      <div class="paso-3">
+        <div class="cabeza-3">
+          <div class="caja-icono-3">
+            <svg class="icono-mensaje" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          </div>
+          <p class="numero-3">03</p>
+        </div>
+        <h2 class="titulo-10">Pide y mira cómo trabaja</h2>
+        <p class="texto-30">Diseña en el lienzo, te pide permiso en lugar de negarse y revisa su trabajo con render e inspección automática.</p>
+      </div>
+    </div>
+    <div class="editor-completo">
+      <p class="titulo-11">Y un editor completo para ti</p>
+      <div class="funciones">
+        <div class="chip-auto-layout">
+          <svg class="icono-13" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M3 3h18v18H3z M3 9h18 M9 21V9" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-31">Auto-layout</p>
+        </div>
+        <div class="chip-componentes">
+          <svg class="icono-14" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-32">Componentes, instancias y variantes</p>
+        </div>
+        <div class="chip-variables">
+          <svg class="icono-15" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18z M12 3a9 9 0 0 1 0 18" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-33">Variables con modo claro y oscuro</p>
+        </div>
+        <div class="chip-pluma">
+          <svg class="icono-16" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z M2 2l7.586 7.586" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-34">Pluma con curvas Bézier</p>
+        </div>
+        <div class="chip-skills">
+          <svg class="icono-17" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-35">Skills de diseño para los agentes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="varios-agentes" id="agentes">
+    <div class="patron-de-puntos-2"></div>
+    <div class="texto-36">
+      <p class="antetitulo-2">Varios agentes a la vez</p>
+      <h1 class="titulo-12">Un líder reparte. Los ayudantes diseñan en paralelo.</h1>
+      <h2 class="parrafo">Cada agente tiene cursor, nombre y color propios, así que siempre sabes quién está haciendo qué. El líder divide el trabajo en zonas y cada ayudante diseña la suya.</h2>
+      <div class="lista">
+        <div class="punto-permiso">
+          <svg class="icono-18" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z M9 12l2 2 4-4" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-37">Piden permiso en lugar de negarse. Tú decides.</p>
+        </div>
+        <div class="punto-revision">
+          <svg class="icono-19" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z M12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-38">Revisan su propio trabajo con render e inspección automática.</p>
+        </div>
+        <div class="punto-historial">
+          <svg class="icono-20" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8z M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+          <p class="texto-39">Cada cambio queda en tu historial, firmado por el agente que lo hizo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="visual-zonas">
+      <div class="mini-lienzo">
+        <div class="zona-a"></div>
+        <p class="etiqueta-zona-a">Zona A · Reservas</p>
+        <div class="zona-b"></div>
+        <p class="etiqueta-zona-b">Zona B · Panel de pedidos</p>
+        <div class="zona-c"></div>
+        <p class="etiqueta-zona-c">Zona C · Tarjetas de menú</p>
+        <div class="bloque-a1"></div>
+        <div class="bloque-a2"></div>
+        <div class="bloque-a3"></div>
+        <div class="bloque-a4"></div>
+        <div class="bloque-b1"></div>
+        <div class="bloque-b2"></div>
+        <div class="bloque-c1"></div>
+        <div class="bloque-c2"></div>
+        <svg class="cursor-a" viewBox="0 0 14 20" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1L1 17L5.5 13L8.5 19.5L11 18.5L8 12L13.5 12Z" fill="var(--tz-agent-claude)" stroke="var(--tz-page)" stroke-width="1" vector-effect="non-scaling-stroke" /></svg>
+        <svg class="cursor-b" viewBox="0 0 14 20" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1L1 17L5.5 13L8.5 19.5L11 18.5L8 12L13.5 12Z" fill="var(--tz-agent-codex)" stroke="var(--tz-page)" stroke-width="1" vector-effect="non-scaling-stroke" /></svg>
+        <svg class="cursor-c" viewBox="0 0 14 20" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1L1 17L5.5 13L8.5 19.5L11 18.5L8 12L13.5 12Z" fill="var(--tz-agent-gemini)" stroke="var(--tz-page)" stroke-width="1" vector-effect="non-scaling-stroke" /></svg>
+      </div>
+      <div class="registro">
+        <div class="entrada-1">
+          <p class="hora-4">14:02:11</p>
+          <div class="color-2"></div>
+          <p class="texto-40">Claude Code repartió 3 zonas</p>
+        </div>
+        <div class="entrada-2">
+          <p class="hora-5">14:03:40</p>
+          <div class="color-3"></div>
+          <p class="texto-41">Codex terminó el panel de pedidos y lo revisó</p>
+        </div>
+        <div class="entrada-3">
+          <p class="hora-6">14:04:05</p>
+          <div class="color-4"></div>
+          <p class="texto-42">Gemini CLI pidió permiso para leer DESIGN.md</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="del-lienzo-al-codigo" id="codigo">
+    <div class="panel-codigo">
+      <div class="pestanas-3">
+        <div class="pestana-html">
+          <p class="texto-43">HTML+CSS</p>
+        </div>
+        <div class="pestana-tailwind">
+          <p class="texto-44">Tailwind</p>
+        </div>
+        <div class="pestana-react">
+          <p class="texto-45">React</p>
+        </div>
+        <div class="pestana-vue">
+          <p class="texto-46">Vue</p>
+        </div>
+        <div class="relleno-2"></div>
+        <p class="kit">kit: shadcn/ui</p>
+      </div>
+      <div class="codigo">
+        <p class="lineas">import { Button } from "@/components/ui/button"<br><br>export function Reservas() {<br>  return (<br>    &lt;main className="flex flex-col gap-3 p-4"&gt;<br>      &lt;h1 className="text-xl font-bold"&gt;Reserva tu mesa&lt;/h1&gt;<br>      &lt;Horario hora="14:00" lugar="Salón" /&gt;<br>      &lt;Button className="w-full"&gt;Reservar 14:00&lt;/Button&gt;<br>    &lt;/main&gt;<br>  )<br>}</p>
+      </div>
+    </div>
+    <div class="texto-47">
+      <p class="antetitulo-3">Del lienzo al código</p>
+      <h1 class="titulo-13">Lo que diseñas sale en el formato que usas.</h1>
+      <h2 class="parrafo-2">Exporta imágenes, documentos y presentaciones, o genera código como punto de partida con los componentes de tu kit.</h2>
+      <div class="grupos">
+        <div class="grupo-archivos">
+          <p class="etiqueta-10">Archivos</p>
+          <p class="valores">PNG · JPG · WEBP · SVG · PDF · PPTX · HTML</p>
+        </div>
+        <div class="grupo-codigo">
+          <p class="etiqueta-11">Código</p>
+          <p class="valores-2">HTML+CSS · Tailwind · React · Vue</p>
+        </div>
+        <div class="grupo-kits">
+          <p class="etiqueta-12">Kits</p>
+          <p class="valores-3">Tailwind · shadcn/ui · daisyUI · Bootstrap · Bulma</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flujo-prototipo" id="prototipo">
+    <header class="pf-encabezado">
+      <p class="pf-antetitulo">Prototipo</p>
+      <h2 class="pf-titulo">Tus pantallas ya navegan.</h2>
+      <p class="pf-bajada">Conecta un botón, una pestaña o una fila con otra pantalla y dale «Presentar»: se usa como la app. Esta es una app de finanzas diseñada por un agente en Trazo, con sus pantallas conectadas.</p>
+    </header>
+    <div class="pf-flujo">
+      <figure class="pf-pantalla">
+        <img src="assets/proto-metas.webp" width="300" height="649" alt="Pantalla Metas de ahorro" loading="lazy">
+        <figcaption>Metas</figcaption>
+      </figure>
+      <div class="pf-conector pf-izq" aria-hidden="true">
+          <svg viewBox="0 0 120 60" preserveAspectRatio="none"><path class="pf-curva" d="M2 30 C40 30 80 30 110 30" /><path class="pf-punta" d="M118 30 L108 24 L108 36 Z" /><circle class="pf-viaje" r="4"><animateMotion dur="2.4s" repeatCount="indefinite" path="M2 30 C40 30 80 30 110 30" /></circle></svg>
+          <span class="pf-accion">Pestaña Metas</span>
+        </div>
+      <figure class="pf-pantalla pf-centro">
+        <img src="assets/proto-movimientos.webp" width="300" height="649" alt="Pantalla Movimientos" loading="lazy">
+        <span class="pf-toque" style="left: 36%; top: 59%" aria-hidden="true"></span>
+        <span class="pf-toque pf-toque-2" style="left: 34%; top: 95%" aria-hidden="true"></span>
+        <figcaption>Movimientos</figcaption>
+      </figure>
+      <div class="pf-conector pf-der" aria-hidden="true">
+          <svg viewBox="0 0 120 60" preserveAspectRatio="none"><path class="pf-curva" d="M2 30 C40 30 80 30 110 30" /><path class="pf-punta" d="M118 30 L108 24 L108 36 Z" /><circle class="pf-viaje" r="4"><animateMotion dur="2.4s" repeatCount="indefinite" path="M2 30 C40 30 80 30 110 30" /></circle></svg>
+          <span class="pf-accion">Fila del movimiento</span>
+        </div>
+      <figure class="pf-pantalla">
+        <img src="assets/proto-detalle.webp" width="300" height="649" alt="Pantalla Detalle de movimiento" loading="lazy">
+        <figcaption>Detalle</figcaption>
+      </figure>
+    </div>
+    <ol class="pf-pasos">
+      <li><b>Arrastra el conector</b><span>Selecciona una capa y lleva su conector hasta la pantalla a la que va. Elige disolver, deslizar o empujar.</span></li>
+      <li><b>O que lo haga tu agente</b><span>Al terminar un flujo, el agente conecta pestañas, botones, filas, atrás y cerrar.</span></li>
+      <li><b>Preséntalo</b><span>En un marco de teléfono, tablet o navegador; en tu celular, a pantalla completa con la app de Trazo.</span></li>
+    </ol>
+  </section>
+  <section class="flujo-motion" id="motion">
+    <header class="mo-encabezado">
+      <p class="mo-antetitulo">Motion</p>
+      <h2 class="mo-titulo">Tu diseño también se mueve.</h2>
+      <p class="mo-bajada">Anima tus pantallas y piezas con keyframes en una línea de tiempo, o pídeselo a tu agente. Este reel se diseñó y se animó en Trazo, y el video es el MP4 tal como lo exportó.</p>
+    </header>
+    <div class="mo-demo">
+      <figure class="mo-editor">
+        <img src="assets/motion-editor.webp" width="1600" height="1000" alt="El espacio Motion de Trazo: el reel en el lienzo, sus capas y la línea de tiempo con los keyframes de cada capa" loading="lazy">
+      </figure>
+      <figure class="mo-reel">
+        <video src="assets/motion-reel.mp4" poster="assets/motion-reel.webp" width="540" height="960" autoplay muted loop playsinline preload="metadata" aria-label="El reel exportado desde Trazo en MP4"></video>
+        <figcaption>El MP4 que exportó</figcaption>
+      </figure>
+      <script>
+        // Con «reducir movimiento», el reel se queda en su cuadro de portada.
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { const v = document.currentScript.previousElementSibling.querySelector('video'); v.removeAttribute('autoplay'); v.pause(); v.controls = true; }
+      </script>
+    </div>
+    <ul class="mo-puntos">
+      <li><b>Keyframes y recetas</b><span>Graba cambios con autokey, ajusta la curva o aplica una receta de entrada en un clic. Las copias vivas repiten la animación sin rehacerla.</span></li>
+      <li><b>Video, audio y subtítulos</b><span>Pon un video como capa o relleno. Trazo lo transcribe en tu equipo y te da subtítulos en varios idiomas.</span></li>
+      <li><b>Exporta sin esperar</b><span>Tu archivo sigue abierto mientras se exporta, con cada cuadro exacto y el audio incluido.</span><small>MP4 · GIF · PNG</small></li>
+    </ul>
+  </section>
+  <section class="flujo-motion flujo-sistemas" id="sistemas">
+    <header class="mo-encabezado">
+      <p class="mo-antetitulo">Sistemas de diseño</p>
+      <h2 class="mo-titulo">Tu marca, en cada pantalla.</h2>
+      <p class="mo-bajada">Guarda tu sistema de diseño una vez y todo archivo nuevo empieza con él: colores, tipografía, componentes y una guía que los agentes siguen. Sácalo de tu web, impórtalo de Claude Design o llévalo a tu código.</p>
+    </header>
+    <figure class="mo-editor si-captura">
+      <img src="assets/sistemas-navegador.webp" width="1600" height="1000" alt="El navegador de Trazo extrayendo el sistema de diseño de la landing de Trazo: marca fuentes, títulos, colores y espaciados sobre la página y a un lado arma la lista de colores, fuentes, títulos, espaciados y radios" loading="lazy">
+    </figure>
+    <ul class="mo-puntos si-puntos">
+      <li><b>Desde tu web</b><span>Abre tu sitio en el navegador de Trazo y dale «Extraer sistema». Marca sobre la página cada fuente, título, color y espaciado que toma, y arma el sistema.</span></li>
+      <li><b>Desde Claude Design</b><span>Importa el sistema que ya hiciste ahí: colores en claro y oscuro, escala de texto, espaciados y la guía de cada componente.</span></li>
+      <li><b>Se respeta</b><span>La revisión marca cualquier color, fuente o tamaño que no sea del sistema, y los agentes lo corrigen antes de terminar.</span></li>
+      <li><b>En tu código</b><span>Instálalo en tu repositorio: la guía y los tokens en CSS y JSON, con una nota para que Claude Code y Codex lo usen al programar.</span></li>
+    </ul>
+  </section>
+  <section class="prototipo-y-app-movil" id="movil">
+    <div class="patron-de-puntos-3"></div>
+    <header class="encabezado-seccion-2">
+      <p class="antetitulo-4">Prototipo y app móvil</p>
+      <h1 class="titulo-14">Pruébalo como se va a usar. Sigue a tus agentes desde el teléfono.</h1>
+    </header>
+    <div class="tarjetas">
+      <div class="tarjeta-prototipo">
+        <div class="visual-dispositivos">
+          <div class="telefono">
+            <div class="marco-telefono">
+              <div class="linea"></div>
+              <div class="bloque"></div>
+              <div class="bloque-2"></div>
+              <div class="relleno-3"></div>
+              <button type="button" class="boton"></button>
+            </div>
+            <p class="etiqueta-13">Teléfono</p>
+          </div>
+          <div class="tablet">
+            <div class="marco-tablet">
+              <div class="linea-2"></div>
+              <div class="imagen"></div>
+              <div class="bloque-3"></div>
+              <div class="bloque-4"></div>
+            </div>
+            <p class="etiqueta-14">Tablet</p>
+          </div>
+          <div class="navegador">
+            <div class="marco-navegador">
+              <div class="barra-3">
+                <div class="punto-5"></div>
+                <div class="punto-6"></div>
+                <div class="punto-7"></div>
+              </div>
+              <div class="contenido">
+                <div class="linea-3"></div>
+                <div class="linea-4"></div>
+                <button type="button" class="boton-2"></button>
+              </div>
+            </div>
+            <p class="etiqueta-15">Navegador</p>
+          </div>
+        </div>
+        <div class="texto-48">
+          <h2 class="titulo-15">Prototipo y presentación</h2>
+          <p class="parrafo-3">Conecta pantallas con interacciones y preséntalas dentro de un marco de teléfono, tablet o navegador.</p>
+        </div>
+      </div>
+      <div class="tarjeta-app-movil">
+        <div class="visual-movil">
+          <div class="telefono-app">
+            <div class="cabecera">
+              <svg class="logo-3" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 19c3-9 6-13 8-13s2 6 4 6 3-3 4-6" fill="none" stroke="var(--tz-mint)" stroke-width="2.5" vector-effect="non-scaling-stroke" /></svg>
+              <p class="archivo-2">cafe-lunar.trazo</p>
+            </div>
+            <div class="miniatura">
+              <div class="pantalla"></div>
+              <div class="pantalla-2"></div>
+            </div>
+            <div class="mensaje-agente">
+              <div class="color-5"></div>
+              <p class="texto-49">Codex: panel listo. ¿Agrego el estado vacío?</p>
+            </div>
+            <div class="respuesta">
+              <p class="texto-50">Sí, y uno de error.</p>
+            </div>
+            <div class="relleno-4"></div>
+            <div class="campo">
+              <p class="texto-51">Escribe a tus agentes</p>
+            </div>
+          </div>
+          <div class="conexion">
+            <div class="fila">
+              <svg class="icono-monitor" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z M8 21h8 M12 17v4" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-52">Escritorio</p>
+            </div>
+            <div class="fila-tailscale">
+              <svg class="icono-enlace" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke="var(--tz-mint)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-53">Tailscale</p>
+            </div>
+            <div class="fila-3">
+              <svg class="icono-telefono" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z M12 18h.01" fill="none" stroke="var(--tz-text-2)" stroke-width="1.75" vector-effect="non-scaling-stroke" /></svg>
+              <p class="texto-54">Teléfono</p>
+            </div>
+          </div>
+        </div>
+        <div class="texto-55">
+          <h2 class="titulo-16">App móvil espejo</h2>
+          <p class="parrafo-4">Mira el lienzo y habla con tus agentes desde el teléfono. Se conecta con tu escritorio por Tailscale.</p>
+          <a class="pf-apk" href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-android.apk">Descargar para Android (.apk)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="agentes-compatibles" id="compatibles">
+    <header class="encabezado-seccion-3">
+      <div class="titulos">
+        <p class="antetitulo-5">Agentes compatibles</p>
+        <h1 class="titulo-17">Trae el agente que ya usas.</h1>
+      </div>
+      <h2 class="parrafo-5">Corren en tu equipo y se conectan a Trazo por MCP. Puedes usar uno o varios en el mismo archivo.</h2>
+    </header>
+    <div class="agentes-3">
+      <div class="agente-claude-code">
+        <div class="recuadro-logo">
+          <span class="texto-56" aria-hidden="true">C</span>
+        </div>
+        <div class="texto-57">
+          <h2 class="nombre-3">Claude Code</h2>
+          <p class="detalle">CLI · MCP</p>
+        </div>
+      </div>
+      <div class="agente-codex">
+        <div class="recuadro-logo-2">
+          <span class="texto-58" aria-hidden="true">X</span>
+        </div>
+        <div class="texto-59">
+          <h2 class="nombre-4">Codex</h2>
+          <p class="detalle-2">CLI · MCP</p>
+        </div>
+      </div>
+      <div class="agente-gemini-cli">
+        <div class="recuadro-logo-3">
+          <span class="texto-60" aria-hidden="true">G</span>
+        </div>
+        <div class="texto-61">
+          <h2 class="nombre-5">Gemini CLI</h2>
+          <p class="detalle-3">CLI · MCP</p>
+        </div>
+      </div>
+      <div class="agente-opencode">
+        <div class="recuadro-logo-4">
+          <span class="texto-62" aria-hidden="true">O</span>
+        </div>
+        <div class="texto-63">
+          <h2 class="nombre-6">OpenCode</h2>
+          <p class="detalle-4">CLI · MCP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-final" id="descargar">
+    <span class="patron-de-puntos-4"></span>
+    <span class="caja-cta">
+      <svg class="logo-trazo-2" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 19c3-9 6-13 8-13s2 6 4 6 3-3 4-6" fill="none" stroke="var(--tz-mint)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+      <h2 class="titulo-18">Tu archivo, tus agentes, tu equipo.</h2>
+      <span class="bajada-2">Trazo es gratis y local. Descárgalo y conecta el agente que ya usas.</span>
+      <span class="acciones">
+        <a class="boton-linux" href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-linux-amd64.deb">
+          <svg class="icono-descargar-3" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3" fill="none" stroke="var(--tz-on-mint)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+          <span class="etiqueta-16">Descargar para Linux (.deb)</span>
+        </a>
+        <a class="boton-macos" href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-macos-universal.dmg">
+          <span class="etiqueta-17">macOS</span>
+        </a>
+        <a class="boton-windows" href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-windows-x64-setup.exe">
+          <span class="etiqueta-18">Windows</span>
+        </a>
+      </span>
+      <span class="recuadro-version-y-requisitos">
+        <span class="texto-64">Versión 0.5.6 · Linux también en <a href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-linux-x86_64.AppImage">AppImage</a> y <a href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-linux-x86_64.rpm">.rpm</a> · macOS universal (Intel y Apple) · <a href="https://github.com/artuino0/trazo-releases/releases/latest">todas las versiones</a></span>
+      </span>
+    </span>
+  </section>
+  <footer class="footer">
+    <div class="arriba">
+      <div class="marca">
+        <div class="logo-4">
+          <svg class="logo-trazo-3" viewBox="0 0 24 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 19c3-9 6-13 8-13s2 6 4 6 3-3 4-6" fill="none" stroke="var(--tz-mint)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg>
+          <h2 class="logo-palabra-2">Trazo</h2>
+        </div>
+        <p class="descripcion">Editor de diseño UX/UI local donde tú y tus agentes de IA trabajan en el mismo lienzo.</p>
+      </div>
+      <div class="columna-producto">
+        <p class="titulo-19">Producto</p>
+        <a class="enlace" href="#como-funciona">Cómo funciona</a>
+        <a class="enlace-2" href="#agentes">Varios agentes</a>
+        <a class="enlace-3" href="#codigo">Del lienzo al código</a>
+        <a class="enlace-4" href="#motion">Motion</a>
+        <a class="enlace-4" href="#sistemas">Sistemas de diseño</a>
+        <a class="enlace-4" href="#movil">App móvil</a>
+      </div>
+      <div class="columna-descargas">
+        <p class="titulo-20">Descargar</p>
+        <a class="enlace-5" href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-linux-amd64.deb">Linux</a>
+        <a class="enlace-6" href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-macos-universal.dmg">macOS</a>
+        <a class="enlace-7" href="https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-windows-x64-setup.exe">Windows</a>
+      </div>
+    </div>
+    <div class="abajo">
+      <p class="nota-3">Tus archivos .trazo viven en tu equipo.</p>
+      <p class="plataformas">Linux · macOS · Windows</p>
+    </div>
+  </footer>
+</main>
+<script>
+  // Las maquetas del editor y de las zonas tienen el ancho fijo del diseño;
+  // en pantallas más chicas se escalan completas en lugar de recortarse.
+  (function () {
+    var fijos = ['.vista-del-editor', '.visual-zonas'];
+    function escalar() {
+      fijos.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (!el) return;
+        var padre = el.parentElement, cs = getComputedStyle(padre);
+        var ancho = padre.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+        el.style.zoom = Math.min(1, ancho / parseFloat(getComputedStyle(el).width));
+      });
+    }
+    addEventListener('resize', escalar);
+    escalar();
+  })();
+</script>
+<script>
+  // Los botones «Descargar» bajan directo el instalador del sistema de quien visita; si no se reconoce, llevan a la sección de descargas.
+  (function () {
+    var ua = navigator.userAgent, files = { mac: ['https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-macos-universal.dmg', 'macOS'], win: ['https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-windows-x64-setup.exe', 'Windows'], linux: ['https://github.com/artuino0/trazo-releases/releases/latest/download/Trazo-linux-amd64.deb', 'Linux'] };
+    var os = /Mac/.test(ua) && !/iPhone|iPad/.test(ua) ? 'mac' : /Windows/.test(ua) ? 'win' : /Linux/.test(ua) && !/Android/.test(ua) ? 'linux' : null;
+    if (!os) return;
+    document.querySelectorAll('[data-descarga]').forEach(function (a) {
+      a.href = files[os][0];
+      a.title = 'Descargar para ' + files[os][1];
+    });
+  })();
+</script>
+<!-- Cloudflare Web Analytics: visitas sin cookies -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5b36e8361bce44acb9bec6adb301dd2a"}'></script>
+</body>
+</html>
